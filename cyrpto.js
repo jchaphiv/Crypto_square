@@ -2,15 +2,16 @@
 // var *object* = new *class*
 var Crypto = function (text){
 	// stores the string for use elsewhere
-	var crypto = {
-
-	}
 	this.text = text; 
 };
 
 Crypto.prototype.normalizePlaintext = function(){
-		crypto.replace(/#/g, '');
-	return this.text;
+	return this.text.replace(/[^0-9a-zA-Z]/g, ''); 
+// replace(/[^0-9a-zA-Z]/g, ''): replaces all characters that are not digits and alpha characters
+	return this.text.toLowerCase();
 };
 
-module.exports = Crypto; 
+module.exports = Crypto;
+
+
+
